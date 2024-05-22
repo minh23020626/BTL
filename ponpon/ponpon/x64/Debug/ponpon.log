@@ -1,0 +1,36 @@
+﻿  Button.cpp
+  enemy.cpp
+  Game_Base.cpp
+  LoadText.cpp
+  main.cpp
+C:\Users\Admin\Downloads\game\BTL\ponpon\LoadText.cpp(27,38): warning C4474: 'printf' : too many arguments passed for format string
+  C:\Users\Admin\Downloads\game\BTL\ponpon\LoadText.cpp(27,38):
+  placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+  
+C:\Users\Admin\Downloads\game\BTL\ponpon\LoadText.cpp(32,57): warning C4474: 'printf' : too many arguments passed for format string
+  C:\Users\Admin\Downloads\game\BTL\ponpon\LoadText.cpp(32,57):
+  placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+  
+C:\Users\Admin\Downloads\game\BTL\ponpon\main.cpp(103,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Admin\Downloads\game\BTL\ponpon\main.cpp(237,52): warning C4474: 'printf' : too many arguments passed for format string
+  C:\Users\Admin\Downloads\game\BTL\ponpon\main.cpp(237,52):
+  placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+  
+C:\Users\Admin\Downloads\game\BTL\ponpon\main.cpp(243,54): warning C4474: 'printf' : too many arguments passed for format string
+  C:\Users\Admin\Downloads\game\BTL\ponpon\main.cpp(243,54):
+  placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+  
+  Player.cpp
+  utils.cpp
+C:\Users\Admin\Downloads\game\BTL\ponpon\utils.cpp(58,42): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
+C:\Users\Admin\Downloads\game\BTL\ponpon\utils.cpp(58,42): warning C4244:         with
+C:\Users\Admin\Downloads\game\BTL\ponpon\utils.cpp(58,42): warning C4244:         [
+C:\Users\Admin\Downloads\game\BTL\ponpon\utils.cpp(58,42): warning C4244:             _Ty=double
+C:\Users\Admin\Downloads\game\BTL\ponpon\utils.cpp(58,42): warning C4244:         ]
+C:\Users\Admin\Downloads\game\BTL\ponpon\utils.cpp(59,44): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
+C:\Users\Admin\Downloads\game\BTL\ponpon\utils.cpp(59,44): warning C4244:         with
+C:\Users\Admin\Downloads\game\BTL\ponpon\utils.cpp(59,44): warning C4244:         [
+C:\Users\Admin\Downloads\game\BTL\ponpon\utils.cpp(59,44): warning C4244:             _Ty=double
+C:\Users\Admin\Downloads\game\BTL\ponpon\utils.cpp(59,44): warning C4244:         ]
+  Generating Code...
+  ponpon.vcxproj -> C:\Users\Admin\Downloads\game\BTL\ponpon\x64\Debug\ponpon.exe
