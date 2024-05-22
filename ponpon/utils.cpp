@@ -6,7 +6,7 @@ std::string gHighScoreFromFile(std::string path) {
 
 	HighScoreFile.open(path, std::ios::in);
 	HighScoreFile >> HighScore;
-
+        // luu diem cao 
 	return HighScore;
 }
 
@@ -17,27 +17,27 @@ void UpdateHighscore(std::string path, const int& score, const std::string& old_
 	std::stringstream ConvertToInt(old_high_score);
 
 	HighScoreFile.open(path, std::ios::out);
-
+       
 	ConvertToInt >> oldHighScore;
 	if (score > oldHighScore)
 	{
 		oldHighScore = score;
 	}
 	newHighScore = std::to_string(oldHighScore);
-
+        // kiem tra highscore va update
 	HighScoreFile << newHighScore;
 }
 
 int UpdateGameTimeandScore(int& time, int& speed, int& score) {
 	if (time == TIME_MAX) {
 		speed += SPEED_INCREASEMENT;
-	}
+	} // khi tg dat gioi han thi tang toc do va cap nhat time
 	if (time > TIME_MAX) {
 		time = 0;
 	}
 	if (time % 5 == 0) {
 		score += SCORE_INCREASEMENT;
-	}
+	} // 5 dv tg thi cong diem
 	time += TIME_INCREASEMENT;
 	return time;
 }
@@ -54,19 +54,20 @@ void RenderScoreBackground(std::vector<double>& offsetspeed, LoadText(&gBackgrou
 		offsetspeed[i] -= layer_speed[i];
 		if (offsetspeed[i] < -gBackgroundText[i].GetWidth()) {
 			offsetspeed[i] = 0;
-		}
+		}  // cuon cac lop den het
 		gBackgroundText[i].Render(offsetspeed[i], 0, gRenderer);
 		gBackgroundText[i].Render(offsetspeed[i] + gBackgroundText[i].GetWidth(), 0, gRenderer);
+		// cap nhat dat lai khi den 0
 	}
 }
 
 void RenderScoreGround(int& speed, const int acceleration, LoadText gGroundText, SDL_Renderer* gRenderer) {
-	speed -= GROUND_SPEED + acceleration;
+	speed -= GROUND_SPEED + acceleration; // toc do them gia toc
 	if (speed < -gGroundText.GetWidth()) {
 		speed = 0;
-	}
+	} 
 	gGroundText.Render(speed, 0, gRenderer);
-	gGroundText.Render(speed + gGroundText.GetWidth(), 0, gRenderer);
+	gGroundText.Render(speed + gGroundText.GetWidth(), 0, gRenderer); // dat lai khi den gh
 }
 
 void HandlePlayButton(SDL_Event* e, Button& PlayButton, bool& QuitMenu, bool& play, Mix_Chunk* gClick) {
@@ -100,9 +101,9 @@ void HandleHelpButton(SDL_Event* e, SDL_Rect(gBackButton)[BUTTON_TOTAL], Button&
 			break;
 		case SDL_MOUSEBUTTONDOWN:
 			HelpButton.currentSprite = BUTTON_MOUSE_OVER;
-			Mix_PlayChannel(MIX_CHANNEL, gClick, NOT_REPEATITIVE);
+			Mix_PlayChannel(MIX_CHANNEL, gClick, NOT_REPEATITIVE); // kiem tra toa do event chuot
 
-			bool ReadDone = false;
+			bool ReadDone = false; // bien check doc instruction 
 			while (!ReadDone) {
 				do {
 					if (e->type == SDL_QUIT) {
@@ -253,7 +254,7 @@ bool CheckColission(player Player, SDL_Rect* player_clip, enemy Enemy, SDL_Rect*
 	int bottom_a = Player.gPosY() + player_clip->h;
 
 	if (Enemy.GetType() == ON_GROUND_ENEMY) {
-		const int TRASH_PIXEL_1 = 25;
+		const int TRASH_PIXEL_1 = 25; // do gian de dieu chinh va cham cho hop li
 		const int TRASH_PIXEL_2 = 30;
 
 		int left_b = Enemy.gPosX();
@@ -322,14 +323,14 @@ void ControlEnemyFrame(int& frame) {
 }
 
 void DrawPlayerScore(LoadText gText, LoadText gScoreText, SDL_Color textColor, SDL_Renderer* gRenderer, TTF_Font* gFont, const int& Score) {
-	gText.Render(TEXT_1_POSX, TEXT_1_POSY, gRenderer);
+	gText.Render(TEXT_1_POSX, TEXT_1_POSY, gRenderer); // hien thi diem o hai vi tri t1
 	if (gScoreText.LoadFromRenderedText(std::to_string(Score), gFont, textColor, gRenderer)) {
 		gScoreText.Render(SCORE_POSX, SCORE_POSY, gRenderer);
 	}
 }
 
 void DrawPlayerHighScore(LoadText gText, LoadText gHighScoreText, SDL_Color textColor, SDL_Renderer* gRenderer, TTF_Font* gFont, const std::string& HighScore) {
-	gText.Render(TEXT_2_POSX, TEXT_2_POSY, gRenderer);
+	gText.Render(TEXT_2_POSX, TEXT_2_POSY, gRenderer); // hien thi highscore t2
 	if (gHighScoreText.LoadFromRenderedText(HighScore, gFont, textColor, gRenderer)) {
 		gHighScoreText.Render(HIGH_SCORE_POSX, HIGH_SCORE_POSY, gRenderer);
 	}
