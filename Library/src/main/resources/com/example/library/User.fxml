@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="716.0" prefWidth="997.0" style="-fx-background-color: #f4f4f9;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.user.UserManagerSystem">
+    <children>
+        <AnchorPane layoutX="274.0" prefHeight="716.0" prefWidth="700.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane layoutX="37.0" layoutY="135.2" prefHeight="551.0" prefWidth="688.0" style="-fx-background-color: #6a11cb; -fx-border-color: #6a11cb;" AnchorPane.bottomAnchor="30.0" AnchorPane.topAnchor="135.0">
+                    <children>
+                        <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="554.0" prefWidth="790.0" style="-fx-padding: 0; -fx-border-radius: 8px; -fx-border-color: linear-gradient(to bottom, #6a11cb, #2575fc);" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <content>
+                                <TableView fx:id="table" onMouseClicked="#getData" prefHeight="578.0" prefWidth="674.0" style="-fx-border-color: linear-gradient(to bottom right, #6a11cb, #2575fc); -fx-border-radius: 8; -fx-padding: 0;">
+                                    <columns>
+                                        <TableColumn fx:id="colUsername" prefWidth="122.40002292394638" text="Username" />
+                                        <TableColumn fx:id="colPassword" prefWidth="129.59996795654297" text="Password" />
+                                        <TableColumn fx:id="colName" prefWidth="149.6000213623047" text="Name" />
+                                        <TableColumn fx:id="colPhoneNumber" prefWidth="146.39990234375" text="Phone Number" />
+                                        <TableColumn fx:id="colClass" prefWidth="128.00006103515625" text="Class" />
+                                    </columns>
+                                </TableView>
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="36.0" layoutY="30.0" prefHeight="82.0" prefWidth="686.0" style="-fx-background-color: linear-gradient(to bottom, #6a11cb, #2575fc); -fx-border-color: linear-gradient(to bottom, #6a11cb, #2575fc); -fx-background-radius: 8; -fx-border-radius: 8;">
+                    <children>
+                        <ImageView fx:id="userMView" fitHeight="81.0" fitWidth="74.0" layoutX="306.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@image/userM.png" />
+                            </image>
+                        </ImageView>
+                        <Button layoutX="594.0" layoutY="21.0" mnemonicParsing="false" onAction="#openLoginClient" prefHeight="39.0" prefWidth="60.0" style="-fx-background-color: linear-gradient(to right, #6a11cb, #2575fc, #6a11cb); -fx-text-fill: white;" stylesheets="@style.css" />
+                        <ImageView fx:id="logoutView" fitHeight="22.0" fitWidth="37.0" layoutX="613.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@image/logout.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+            </children></AnchorPane>
+
+        <AnchorPane layoutX="62.0" prefHeight="650.0" prefWidth="268.0" style="-fx-background-color: linear-gradient(to bottom, #6a11cb, #2575fc);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox layoutX="21.0" layoutY="95.0" prefHeight="383.0" prefWidth="226.0" spacing="15.0" AnchorPane.bottomAnchor="243.40000000000003" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="20.600000000000023" AnchorPane.topAnchor="95.0">
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="Username :">
+                        <font>
+                            <Font size="13.0" />
+                        </font>
+                    </Text>
+                    <TextField fx:id="username" onAction="#searchUser" style="-fx-background-color: #f9f9f9; -fx-border-color: linear-gradient(to bottom, #6a11cb, #2575fc); -fx-border-radius: 8; -fx-background-radius: 8;" />
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="Password :">
+                        <font>
+                            <Font size="13.0" />
+                        </font>
+                    </Text>
+                    <TextField fx:id="password" onAction="#searchUser" style="-fx-background-color: #f9f9f9; -fx-border-color: linear-gradient(to bottom, #6a11cb, #2575fc); -fx-border-radius: 8; -fx-background-radius: 8;" />
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="Name :">
+                        <font>
+                            <Font size="13.0" />
+                        </font>
+                    </Text>
+                    <TextField fx:id="tName" onAction="#searchUser" style="-fx-background-color: #f9f9f9; -fx-border-color: linear-gradient(to bottom, #6a11cb, #2575fc); -fx-border-radius: 8; -fx-background-radius: 8;" />
+
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="Phone Number :">
+                        <font>
+                            <Font size="13.0" />
+                        </font>
+                    </Text>
+                    <TextField fx:id="tPhoneNumber" style="-fx-background-color: #f9f9f9; -fx-border-color: linear-gradient(to bottom, #6a11cb, #2575fc); -fx-border-radius: 8; -fx-background-radius: 8;" />
+
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="Class Name :">
+                        <font>
+                            <Font size="13.0" />
+                        </font>
+                    </Text>
+                    <TextField fx:id="tClass" style="-fx-background-color: #f9f9f9; -fx-border-color: linear-gradient(to bottom, #6a11cb, #2575fc); -fx-border-radius: 8; -fx-background-radius: 8;" />
+                    <Line endX="138.10000610351562" endY="-7.62939453125E-6" startX="-100.30001831054688" startY="-7.62939453125E-6" />
+                </VBox>
+                <ImageView fx:id="userView" fitHeight="50.0" fitWidth="48.0" layoutX="29.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@image/user.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="96.0" layoutY="27.0" style="-fx-text-fill: white;" text="USER MANAGEMENT">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <Line endX="138.10000610351562" endY="-7.62939453125E-6" layoutX="116.0" layoutY="82.0" startX="-100.30001831054688" startY="-7.62939453125E-6" />
+                <Button fx:id="btnSearch" layoutX="47.0" layoutY="479.0" mnemonicParsing="false" onAction="#searchUser" prefHeight="39.0" prefWidth="175.0" style="-fx-background-color: #85C1F7; -fx-background-radius: 10;" stylesheets="@style.css" text="Search" textFill="WHITE" />
+                <Button fx:id="btnAdd" layoutX="47.0" layoutY="525.0" mnemonicParsing="false" onAction="#addU" prefHeight="20.0" prefWidth="175.0" style="-fx-background-color: #85C1F7; -fx-background-radius: 10;" stylesheets="@style.css" text="Add" />
+                <Button fx:id="btnUpdate" layoutX="47.0" layoutY="571.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="20.0" prefWidth="175.0" style="-fx-background-color: #85C1F7; -fx-background-radius: 10;" stylesheets="@style.css" text="Update" />
+                <Button fx:id="btnDelete" layoutX="47.0" layoutY="617.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="20.0" prefWidth="175.0" style="-fx-background-color: #85C1F7; -fx-background-radius: 10;" stylesheets="@style.css" text="Delete" />
+                <Button fx:id="btnClear" layoutX="47.0" layoutY="664.0" mnemonicParsing="false" onAction="#clearUser" prefHeight="20.0" prefWidth="175.0" style="-fx-background-color: #85C1F7; -fx-background-radius: 10;" stylesheets="@style.css" text="Clear" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

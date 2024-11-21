@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.book.DetailsBookController">
+   <children>
+      <GridPane layoutX="50.0" layoutY="45.0" prefHeight="381.0" prefWidth="654.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.3333333333333" minWidth="10.0" prefWidth="287.3333333333333" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="165.33331298828125" minWidth="10.0" prefWidth="106.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="260.6666666666667" minWidth="10.0" prefWidth="260.6666666666667" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="183.0" minHeight="10.0" percentHeight="20.0" prefHeight="70.33333333333333" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="183.0" minHeight="10.0" percentHeight="20.0" prefHeight="78.99999999999999" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="94.9999745686849" minHeight="0.0" percentHeight="20.0" prefHeight="94.9999745686849" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="86.33331298828125" minHeight="10.0" percentHeight="20.0" prefHeight="85.33334350585938" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="86.33331298828125" minHeight="10.0" percentHeight="20.0" prefHeight="61.333343505859375" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="bookImage" fitHeight="375.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true" GridPane.rowSpan="5" />
+            <Label fx:id="publisherLabel" prefHeight="41.0" prefWidth="473.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label fx:id="yearLabel" prefHeight="41.0" prefWidth="473.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label fx:id="titleLabel" prefHeight="41.0" prefWidth="473.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label fx:id="authorLabel" prefHeight="41.0" prefWidth="473.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label fx:id="isbnLabel" prefHeight="41.0" prefWidth="473.0" text="Label" GridPane.columnIndex="2" />
+            <Label prefHeight="17.0" prefWidth="106.0" text="ISBN : " GridPane.columnIndex="1" />
+            <Label prefHeight="17.0" prefWidth="108.0" text="Title :" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="105.0" text="Author :" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label prefHeight="17.0" prefWidth="112.0" text="Year :" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label prefHeight="17.0" prefWidth="113.0" text="Publisher :" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <Button layoutX="85.0" layoutY="518.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="33.0" prefWidth="163.0" text="Return to Menu" />
+      <Button fx:id="buttonPostComment" layoutX="295.0" layoutY="518.0" mnemonicParsing="false" onAction="#borrowBook" prefHeight="33.0" prefWidth="163.0" text="Borrow" />
+      <ScrollPane fx:id="scrollPaneComment" layoutX="704.0" layoutY="100.0" prefHeight="399.0" prefWidth="468.0">
+         <content>
+            <ListView fx:id="commentListView" prefHeight="397.0" prefWidth="467.0" />
+         </content>
+      </ScrollPane>
+      <TextField fx:id="textFieldComment" layoutX="704.0" layoutY="45.0" prefHeight="29.0" prefWidth="327.0" />
+      <Button layoutX="1057.0" layoutY="42.0" mnemonicParsing="false" onAction="#addComment" prefHeight="40.0" prefWidth="76.0" text="post" />
+   </children>
+</AnchorPane>
